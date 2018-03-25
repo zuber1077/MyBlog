@@ -45,7 +45,7 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
     <style>
         .Fildinfo{
-            color: #0089B8;
+            color: #348de5;
             /* font-family: Bitter,Georgia,"Time New Roman",Times,serif; */
             font-size: 1.2em;
         }
@@ -141,7 +141,7 @@
                 <p>Thema By | zuber Ab | &copy;2018-2020 --- All right resrved. </p>
             <hr>
         </div>
-        <div style="height: 10px; background: #27AAE1;"></div>
+        <div style="height: 10px; background: #348de5;"></div>
 
 </body>
 </html>

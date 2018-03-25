@@ -57,7 +57,7 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
     <style>
         .Fildinfo{
-            color: #0089B8;
+            color: #348de5;
             /* font-family: Bitter,Georgia,"Time New Roman",Times,serif; */
             font-size: 1.2em;
         }
@@ -114,7 +114,7 @@
                                     <select class="form-control" name="Category" id="categoryselect">
                                         <?php
                                             global $ConnectingDB;
-                                            $viewQuery="SELECT *FROM Category ORDER BY datetime desc";
+                                            $viewQuery="SELECT *FROM Category ORDER BY datetime desc;";
                                             $Execute=mysql_query($viewQuery);
                                             while ($DataRows=mysql_fetch_array($Execute)) {
                                                 $Id=$DataRows["id"];
@@ -151,7 +151,7 @@
                 <p>Thema By | zuber Ab | &copy;2018-2020 --- All right resrved. </p>
             <hr>
     </div>
-        <div style="height: 10px; background: #27AAE1;"></div>
+        <div style="height: 10px; background: #348de5;"></div>
 
 </body>
 </html>

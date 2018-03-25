@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Blog Page</title>
+    <title>Full Blog Page</title>
     <link rel="stylesheet"  href="css/bootstrap.min.css">
     <link rel="stylesheet"  href="css/publicstyle.css">
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -61,7 +61,7 @@
             <!-- <h1>My Blog</h1> -->
         </div>
         <div class="row">   <!-- row -->
-            <div class="col-lg-6 col-lg-6">  <!-- main blog area -->
+            <div class="col-sm-8">  <!-- main blog area -->
                 <?php 
                     global $ConnectingDB;
                     if(isset($_GET["SearchButton"])){
@@ -70,7 +70,8 @@
                         WHERE datetime 
                         LIKE '%$Search%' OR title LIKE '%$Search%' OR category LIKE '%Search%'  OR post LIKE '%$Search%' ";
                     }else{
-                    $viewQuery="SELECT *FROM admin_panel ORDER BY datetime desc";}
+                        $PostIDFromURL=$_GET["id"]; 
+                    $viewQuery="SELECT *FROM admin_panel WHERE id=$PostIDFromURL ORDER BY datetime desc";}
                     $Execute=mysql_query($viewQuery);
                     while($DataRows=mysql_fetch_array($Execute)){
                         $PostId=$DataRows["id"];
@@ -82,25 +83,19 @@
                         $Post=$DataRows["post"];
                     
                 ?>
-                <div class="col-sm-offset-1 col-lg-5 blogpost thumbnail">
+                <div class="blogpost thumbnail">
                     <img class="img-responive "  src="uploads/<?php echo $Image; ?>">
                     <div class="caption">
                         <h1 id="heading"><?php echo htmlentities($Title);  ?></h1>
                          <p class="description">category:<?php echo $Category; ?>
-                        <span class="postdate"><?php  
-                            if(strlen($DateTime)>11){$DateTime=substr($DateTime,0,11);}
-                        echo htmlentities($DateTime);?></p> </span>
-                        <p class="description"><?php 
-                            if(strlen($Post)>121){$Post=substr($Post,0,121).'...';}
-                        echo $Post; ?></p>
+                        <span class="postdate"><?php  echo htmlentities($DateTime);?></p> </span>
+                        <p class="description"><?php echo $Post; ?></p>
                     </div>
-                    <a class="readmore" href="FullPost.php?id=<?php echo $PostId; ?>">
-                    READ MORE &rsaquo;&rsaquo;</a>
                 </div>
 
                 <?php } ?>
             </div>  <!-- main blog area ending -->
-            <div class="col-sm-offset-4 col-lg-2"> <!-- side area -->
+            <div class="col-sm-offset-1 col-sm-3"> <!-- side area -->
                <h2>Test</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit voluptates iste doloremque nisi? Rem qui nam, explicabo sequi velit facilis earum cupiditate minus, odio porro dicta reiciendis quia ab voluptate.
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ratione cumque corporis ipsum vero non tempora fugit fuga natus atque voluptatibus harum dolor architecto amet a soluta eveniet, maiores temporibus.
@@ -108,16 +103,15 @@
                 </p>
             </div> <!-- side area ending-->
         </div>  <!-- row ending -->
-         
    <!--  -->
     </div>  <!-- container ending -->
-    
     <div id="Footer">
             <hr>
                 <p>Thema By | zuber Ab | &copy;2018-2020 --- All right resrved. </p>
             <hr>
     </div>
-        <div style="height: 10px; background: #348de5;"></div>
+        <div style="height: 10px; background: #27AAE1;"></div>
+    
 
 </body>
 </html>
